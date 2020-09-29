@@ -6,14 +6,17 @@ public class UserRegistration {
 	
 	public static void main(String[] args) {
 		PatternMatcher patternMatcher = new PatternMatcher();
-		
 		//UC1
-		String name1 = "Ishani";
+		String name1 = "Ish";
 		patternMatcher.validateName(name1);
 		
 		//UC2
-		String surname1 = "Mhatre";
+		String surname1 = "Mha";
 		patternMatcher.validateSurname(surname1);
+		
+		//UC3
+		String email = "abc.xyz@bl.co.in";
+		patternMatcher.validateEmail(email);
 	}
 	
 	//USE CASE 1------
@@ -31,19 +34,32 @@ public class UserRegistration {
 	//USE CASE 1 COMPLETE------
 	
 	//USE CASE 2------
-		public void validateSurname(String s) {
-			String regex = "(^[A-Z]{1}[a-z]{2,}$)";	
-			Pattern pattern = Pattern.compile(regex);
-			Matcher matcher= pattern.matcher(s);
-			if(matcher.find()) {
-				System.out.println("SURNAME VALID");
-			}
-			else {
-			System.out.println("SURNAME INVALID");
-			}
+	public void validateSurname(String s) {
+		String regex = "(^[A-Z]{1}[a-z]{2,}$)";	
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher= pattern.matcher(s);
+		if(matcher.find()) {
+			System.out.println("SURNAME VALID");
 		}
-		//USE CASE 2 COMPLETE------
+		else {
+		System.out.println("SURNAME INVALID");
+		}
+	}
+	//USE CASE 2 COMPLETE------
 	
+	
+	//USE CASE 3------
+	public void validateEmail(String s) {
+		String regex = "^(abc[.][A-Za-z]+@bl[.]co[.][A-Za-z]{2,})$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher= pattern.matcher(s);
+		if(matcher.find()) {
+			System.out.println("EMAIL IS VALID");
+		}
+		else {
+		System.out.println("EMAIL IS INVALID");
+		}
+	}
+	//USE CASE 3 COMPLETE------
 	
 }
-
