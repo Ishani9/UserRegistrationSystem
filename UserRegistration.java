@@ -2,16 +2,16 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class UserRegistration {
+public class UserRegistration{
 	
 	public static void main(String[] args) {
 		PatternMatcher patternMatcher = new PatternMatcher();
 		//UC1
-		String name1 = "Ish";
+		String name1 = "Ishani";
 		patternMatcher.validateName(name1);
 		
 		//UC2
-		String surname1 = "Mha";
+		String surname1 = "Mhatre";
 		patternMatcher.validateSurname(surname1);
 		
 		//UC3
@@ -22,8 +22,8 @@ public class UserRegistration {
 		String phno = "91 1110002223";
 		patternMatcher.validatePhone(phno);
 		
-		//UC6
-		String password = "IIISSSHHH";
+		//UC7
+		String password = "IIISSHHh2";
 		patternMatcher.validatePassword(password);
 	}
 	
@@ -84,9 +84,9 @@ public class UserRegistration {
 		}
 		//USE CASE 4 COMPLETE------
 		
-	//USE CASE 6------
+	//USE CASE 7------
 		public void validatePassword(String s) {
-			String regex = "^((?=.*[A-Z]+)([A-Za-z!@#$%^&*]{8,}))$";
+			String regex = "^((?=.*[A-Z]+)(?=.*[0-9]+)([A-Za-z0-9@#$%^&*]{8,}))$";
 			Pattern pattern = Pattern.compile(regex);
 			Matcher matcher= pattern.matcher(s);
 			if(matcher.find()) {
@@ -96,5 +96,5 @@ public class UserRegistration {
 				System.out.println("PASSWORD IS INVALID");
 				}
 			}
-	//USE CASE 6 COMPLETE------
+	//USE CASE 7 COMPLETE------
 }
