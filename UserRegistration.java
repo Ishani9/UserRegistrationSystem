@@ -7,11 +7,11 @@ public class UserRegistration {
 	public static void main(String[] args) {
 		PatternMatcher patternMatcher = new PatternMatcher();
 		//UC1
-		String name1 = "Ish";
+		String name1 = "Ishani";
 		patternMatcher.validateName(name1);
 		
 		//UC2
-		String surname1 = "Mha";
+		String surname1 = "Mhatre";
 		patternMatcher.validateSurname(surname1);
 		
 		//UC3
@@ -21,6 +21,10 @@ public class UserRegistration {
 		//UC4
 		String phno = "91 1110002223";
 		patternMatcher.validatePhone(phno);
+		
+		//UC5
+		String password = "IIISSSHHH";
+		patternMatcher.validatePassword(password);
 	}
 	
 	//USE CASE 1------
@@ -75,9 +79,23 @@ public class UserRegistration {
 				System.out.println("PHONE NUMBER IS VALID");
 			}
 			else {
-			System.out.println("PHONE NUMBER IS INVALID");
+				System.out.println("PHONE NUMBER IS INVALID");
 			}
 		}
 		//USE CASE 4 COMPLETE------
-
+		
+		//USE CASE 5------
+		public void validatePassword(String s) {
+			String regex = "^([A-Za-z!@#$%^&*]{8,})$";
+			Pattern pattern = Pattern.compile(regex);
+			Matcher matcher= pattern.matcher(s);
+			if(matcher.find()) {
+				System.out.println("PASSWORD IS VALID");
+				}
+			else {
+				System.out.println("PASSWORD IS INVALID");
+				}
+			}
+		//USE CASE 5 COMPLETE------
+	
 }
