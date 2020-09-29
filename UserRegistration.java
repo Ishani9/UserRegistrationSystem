@@ -17,6 +17,10 @@ public class UserRegistration {
 		//UC3
 		String email = "abc.xyz@bl.co.in";
 		patternMatcher.validateEmail(email);
+		
+		//UC4
+		String phno = "91 1110002223";
+		patternMatcher.validatePhone(phno);
 	}
 	
 	//USE CASE 1------
@@ -62,4 +66,18 @@ public class UserRegistration {
 	}
 	//USE CASE 3 COMPLETE------
 	
+	//USE CASE 4------
+		public void validatePhone(String s) {
+			String regex = "^([0-9]{1,3}[ ][0-9]{10})$";
+			Pattern pattern = Pattern.compile(regex);
+			Matcher matcher= pattern.matcher(s);
+			if(matcher.find()) {
+				System.out.println("PHONE NUMBER IS VALID");
+			}
+			else {
+			System.out.println("PHONE NUMBER IS INVALID");
+			}
+		}
+		//USE CASE 4 COMPLETE------
+
 }
